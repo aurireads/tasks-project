@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/app.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import TaskForm from '../components/TaskForm';
 
