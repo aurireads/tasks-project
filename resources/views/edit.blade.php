@@ -1,41 +1,29 @@
 @extends('layout')
 
 @section('main-content')
-    <div>
-        <div class="float-start">
-            <h4 class="pb-3">Edit Task <span class="bagde bg-info">{{ $task->title }}</span></h4>
+<div class="form-container">
+    <h2>Edit Task</h2>
+
+    <form action="{{ route('task.update', $task->id) }}" method="POST" class="task-form">
+        @csrf
+        @method('PUT')
+
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="{{ $task->title }}" required>
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" rows="4" required>{{ $task->description }}</textarea>
+
+        <label for="status">Status</label>
+        <select name="status" id="status" required>
+            <option value="Todo" {{ $task->status === 'Todo' ? 'selected' : '' }}>Todo</option>
+            <option value="Done" {{ $task->status === 'Done' ? 'selected' : '' }}>Done</option>
+        </select>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-edit">Edit Task</button>
+            <a href="{{ route('task.index') }}" class="btn btn-delete">Cancel</a>
         </div>
-        <div class="float-end">
-            <a href="{{ route('index') }}" class="btn btn-info">All Tasks</a>
-        </div>
-        <div class="clearfix">
-        </div>
-    </div>
-    <div class="card card-body bg-light p-4">
-        <form action="{{ route('task.update', $task->id) }}" method="POST">
-            @csrf
-            @method('PUT')
-            <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ $task->title }}">
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea type="text" class="form-control" id="description" name="description" rows="5">{{ $task->description }}</textarea>
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Status</label>
-                                <select name="status" id="status" class="form-control">
-                    @foreach ($statuses as $status)
-                        <option value="{{ $status['value'] }}" {{  $task->status === $status['value'] ? 'selected' : '' }}>{{ $status['label'] }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-    </div>
-
-
-
+    </form>
+</div>
 @endsection

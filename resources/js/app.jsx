@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // importa Bootstrap
+import '../css/app.css'; // seu CSS vem depois para sobrescrever
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
