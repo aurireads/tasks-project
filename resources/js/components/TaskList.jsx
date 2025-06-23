@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/app.css';
+import '../../css/app.css';
 import TaskItem from './TaskItem'
 
 export default function TaskList({ tasks, onTaskUpdated }) {
