@@ -1,3 +1,13 @@
+Para rodar: primeiro digite php artisan serve e em outro terminal digite npm run dev
+
+![image](https://github.com/user-attachments/assets/ee6ec894-eb26-499e-b186-9df0a4e83d87)
+![image](https://github.com/user-attachments/assets/2ea4d5c6-960d-4861-a987-ba337ca4083a)
+![image](https://github.com/user-attachments/assets/beda43ad-bbc2-4ec8-bf65-b4a7e337da22)
+![image](https://github.com/user-attachments/assets/7ad1fd6a-c9aa-4d38-baa9-7730e7eaa940)
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
